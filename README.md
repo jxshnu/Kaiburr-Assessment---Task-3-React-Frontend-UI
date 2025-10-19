@@ -1,74 +1,122 @@
-# React + TypeScript + Vite
+# Kaiburr Assessment - Task 3: React Frontend UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the complete frontend solution for **Task 3 of the Kaiburr Technical Assessment**.  
+It is a modern, responsive, and user-friendly web application built with **React 19**, **TypeScript**, and **Ant Design** to provide a comprehensive user interface for the IT Operations Health Check API created in **Task 1**.
 
-Currently, two official plugins are available:
+The application allows users to seamlessly manage and execute diagnostic tasks, view their history, and get real-time feedback, with a strong focus on usability and a clean user experience as requested by the assessment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Key Features & Technology Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🧩 Technology Stack
+- **React 19** – Latest React version for building dynamic, responsive UIs.
+- **TypeScript** – Type-safe code for reliability and maintainability.
+- **Vite** – Ultra-fast build tool for optimized frontend performance.
+- **Ant Design** – Enterprise-grade UI component library for a polished interface.
 
-## Expanding the ESLint configuration
+### ⚙️ Core Functionality
+- **Full CRUD Operations:** Create, view, search, and delete health check tasks.  
+- **Dynamic Task Execution:** Each task includes a “Run” button that triggers backend execution, displaying loading and success/error states.  
+- **Detailed History:** “View History” modal shows complete logs of all past executions, including timestamps and outputs.  
+- **Instant Search:** Quickly filter tasks by name on the client side.  
+- **User-Friendly Forms:** Includes validation and confirmation steps for safe data handling.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🖼️ Live Application Showcase
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This section provides screenshot proof of the live, running application demonstrating key UI components and features.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+> **How to Add Your Screenshots**
+> 1. Capture screenshots for each step below (show date/time and your name in Notepad for authenticity).  
+> 2. Upload them to your repo inside an `/images` folder.  
+> 3. Embed them below using Markdown syntax:  
+>    ```markdown
+>    ![Alt Text](./images/your-image-name.png)
+>    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Main Dashboard View
+**Description:**  
+The main dashboard displaying a table of all available health checks fetched from the live backend API.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-"# Kaiburr-Assessment---Task-3-React-Frontend-UI" 
+**Proof:**  
+_Replace this line with your screenshot of the main dashboard._
+
+---
+
+### 2. Creating a New Task
+**Description:**  
+The “Add New Health Check” modal showing form fields for creating a task.
+
+**Proof:**  
+_Replace this line with your screenshot of the Add New modal._
+
+---
+
+### 3. Running a Task & Receiving Feedback
+**Description:**  
+A task being executed — shows the “Run” button loading and the Ant Design success notification.
+
+**Proof:**  
+_Replace this line with your screenshot of the loading button and success message._
+
+---
+
+### 4. Viewing Execution History
+**Description:**  
+The “Execution History” modal displaying a detailed log of previous runs, including command output.
+
+**Proof:**  
+_Replace this line with your screenshot of the View History modal._
+
+---
+
+## 🧰 Local Setup and Running Instructions
+
+### ⚙️ Prerequisites
+- **Node.js (LTS)**
+- **Running Backend API** (Task 1 Java Spring Boot app)
+
+---
+
+### 🧾 Steps to Run
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd it-ops-health-check-ui
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure the API URL**
+   - Open `src/App.tsx`
+   - Locate the `API_BASE_URL` constant
+   - Set it to your backend endpoint, e.g.:
+     ```typescript
+     const API_BASE_URL = "http://localhost:8081/api";
+     ```
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open the application**
+   Navigate to **[http://localhost:5173](http://localhost:5173)** in your browser.
+
+---
+
+✅ **Tip:** For production deployment, use `npm run build` and host the generated `/dist` folder on any static web host.
+
+---
+
+### 🧾 License
+This project is created as part of the **Kaiburr Technical Assessment**.  
+You may view, clone, and use it for review or educational purposes.
